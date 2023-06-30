@@ -17,9 +17,21 @@ const sendGameResult = async (req, res) => {
     });
     res.status(201).json(result)
   } catch (err){
-    console.log(error);
-    res.status(500).send(error.message)
+    console.log(err);
+    res.status(500).send(err.message)
   }
 };
 
-module.exports =  sendGameResult;
+
+const getGameResults = async(req,res)=>{
+  try{
+    const results = await Result.find({});
+    console.log(Result)
+    res.json(results);
+  }
+  catch(err){
+    res.status(500).send(err.message)
+  }
+}
+
+module.exports =  {sendGameResult,getGameResults};
