@@ -1,9 +1,10 @@
-const express = require("express")
-const {sendGameResult, getGameResults} = require("../controllers/result")
+const express = require("express");
+const { sendGameResult, getGameResults } = require("../controllers/result");
 
-const resultRouter = express()
+const resultRouter = express();
 
-resultRouter.post("/game/save", sendGameResult);
-resultRouter.get("/game/leaderboard", getGameResults);
+resultRouter.post("/save", sendGameResult);
 
-module.exports = resultRouter
+resultRouter.get("/leaderboard", getGameResults);
+
+module.exports = resultRouter;
