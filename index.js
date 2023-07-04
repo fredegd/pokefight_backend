@@ -7,7 +7,7 @@ const pokemonRouter = require("./route/pokemon");
 const resultRouter = require("./route/result");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3030;
 app.use(express.json());
 //routes
 app.use("/pokemon", pokemonRouter);
